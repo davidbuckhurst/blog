@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Top 10 Albums of the Last Decade"
-categories: film top-10
+categories: blog
 ---
 Ok, so this is the really hard one. Most of the so-called critics had a top 10 list in January, but a true professional like me needs at least till mid-July to work this sort of thing out. The consequences of getting something like this wrong are truly mind-blowing. So, starting from number 10:
 
