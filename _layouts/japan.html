@@ -6,13 +6,13 @@
   <body>
   <div class='content'>
 
-  {% include nav.html %}
+  {% include jp_nav.html %}
 
     <div class="container">
 
       <div class="row">
         <h1 class="post-title">{{ page.title }}</h1>
-        <p class="post-meta">{{ page.date | date: "%b %-d, %Y" }}</p>
+        <p class="post-meta">posted <strong>{{ page.date | date: "%b %-d, %Y at %H:%M" }}</strong> by <strong>{{page.author}}</strong></p>
       </div>
 
       <hr />
@@ -21,24 +21,28 @@
         <div class="nine columns">
           {{ content }}
         
-        <hr />
-          
+        
         {% if page.next %}
         <a class="button" href="{{ page.next.url }}">Next: {{ page.next.title }}</a>
         {% endif %}
+
         </div>
        
         <div class="three columns">
 
           <ul class="post-list">
-          {% for post in site.posts %}
+            <li><a class="post-link" href="/japan.html"><strong>Welcome</strong></a></li>
+          {% for post in site.categories['japan'] reversed %}
             <li>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </li>
           {% endfor %}
           </ul>
+          
+          
 
         </div>
+        
       </div>
 
     </div>

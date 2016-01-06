@@ -1,23 +1,36 @@
 ---
 layout: default
 ---
+
+<div class="content">
+
+  
+{% for post in site.posts limit:4 %}
 <div class="container">
   <div class="row">
-    <div class="one-half column">
-      <h1>blog-o-rama</h1>
-      <p>The new home of blog-o-rama</p>
-
-
-      <ul class="post-list">
-        {% for post in site.posts %}
-        <li>
-          <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-
+    <div class="twelve columns">
+      <h1 class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</h1>
+      <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
+      <hr />
+      {{ post.content }}
     </div>
   </div>
 </div>
-
+  
+{% include splitter.html %}
+  
+{% endfor %}
+ 
+ <div class="container">   
+  <div class="row">
+    <p>
+      {% for post in site.posts %}
+        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a> |
+      {% endfor %}
+        <a class="post-link" href="{{ '/japan.html' | prepend: site.baseurl }}">Japan</a>
+    </p>
+    <p>All content (C) 2016 David Buckhurst</p>
+    </div>
+  </div>
+</div>
+</div>
