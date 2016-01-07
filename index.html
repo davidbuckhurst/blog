@@ -36,7 +36,7 @@ layout: default
   
   <br />
       
-  {% for post in site.posts offset:1 %}
+  {% for post in site.posts limit:5 offset:1 %}
     <div class="row">    
     <div class="nine columns">
       <h1 class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</h1>
